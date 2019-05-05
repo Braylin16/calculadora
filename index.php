@@ -42,15 +42,13 @@ $value = $_GET['value'];
     </div>
     <div class="form-group">
 
-    <span class="glyphicon glyphicon-plus"></span>
-
-        <!--
             <select name="value" id="value">
                 <option value="+">Sumar</option>
                 <option value="*">Multiplicar</option>
                 <option value="/">Dividir</option>
+                <option value="-">Restar</option>
             </select>
-        -->
+
         <input type="number" class="form-control" name="numero2" placeholder="Valor 2" required>
     </div>
     <p><br>
@@ -63,7 +61,17 @@ $value = $_GET['value'];
     <h3>Resultado:</h3>
     <div class="row">
         <p class="resultado">
-            <?php echo $numero1 + $numero2; ?>
+            <?php if($value == '+'){
+                echo $numero1 + $numero2;
+            }elseif($value == '-'){
+                echo $numero1 - $numero2;
+            }elseif($value == '*'){
+                echo $numero1 * $numero2;
+            }elseif($value == '/'){
+                echo $numero1 / $numero2;
+            }else{
+                echo "0";
+            } ?>
         </p>
     </div>
 </div>
